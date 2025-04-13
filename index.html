@@ -84,6 +84,7 @@ if (window.applicationCache.status=='0'){window.location.replace("cache.html");}
    var pthread = p.malloc(0x10);
    chain.call(libKernelBase.add32(OFFSET_lk_pthread_create), pthread, 0x0, payload_buffer, 0);
    allset();
+   EndTimer();
   }
  };
 }
@@ -100,6 +101,9 @@ function goldhen(){
             document.getElementById("loader").style.display = "none";
             document.getElementById("allset").style.display = "block";
         }
+function CalcTime(dur){hrs=Math.floor(dur/1000/60/60);min=Math.floor(dur/1000/60-hrs*60);sec=Math.floor(dur/1000-min*60);mil=dur.toString().slice(-3);if (min!=0){ShowDuration=" - WK Exploited In : "+min+" minute"+(min==1?"":"s")+", "+sec+" second"+(sec==1?"":"s");}else {ShowDuration=" - Exploited In: "+sec+" second"+(sec==1?"":"s");}}
+function StartTimer(){StartTime=Date.now();}
+function EndTimer(){EndTime=Date.now();CalcTime(EndTime=Date.now()-StartTime);document.title+=ShowDuration;}
 </script>
 <script src="./int64.js"></script>
 <script src="./rop.js"></script>
