@@ -683,12 +683,12 @@ async function make_arw(reader, view2, pop) {
 }
 
 async function run() {
-    StartTimer();
-    showMessage("Webkit exploit (PSFree15b) (Step 0 - UaF SSV)"),    
+    //StartTimer();
+    //showMessage("Webkit exploit (PSFree15b) (Step 0 - UaF SSV)"),    
     debug_log('STAGE: UaF SSV');
     const [fsets, indices] = prepare_uaf();
     const view = await uaf_ssv(fsets, indices[1]);
-    showMessage("Webkit exploit (PSFree15b) (Step 1 - Read primitive)"),    
+    //showMessage("Webkit exploit (PSFree15b) (Step 1 - Read primitive)"),    
     debug_log('STAGE: get string relative read primitive');
     const rdr = await make_rdr(view);
     const [view2, pop] = await uaf_ssv(fsets, indices[0], true);   
@@ -696,7 +696,7 @@ async function run() {
         fset.rows = '';
         fset.cols = '';
     }
-    showMessage("Loading Exfathax..Please Wait"),
+    //showMessage("Loading Exfathax..Please Wait"),
     debug_log('STAGE: achieve arbitrary read/write primitive');
     await make_arw(rdr, view2, pop);
     let prim = {
