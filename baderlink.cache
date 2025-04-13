@@ -1,0 +1,18 @@
+CACHE MANIFEST 
+#VERSION 1.2 
+
+CACHE: 
+cache.html
+config.js
+goldhen.bin
+host.jpg
+index.html
+int64.js
+kexploit.js
+offset.js
+psfreec.js
+rop.js
+utils.js
+
+NETWORK: 
+* 
